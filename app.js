@@ -291,11 +291,36 @@ console.log("ALl cuisine types are: ", cuisines)
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
 //Map 
+function problemNine(){
+    let results;
+    results = dishes.map(function(el){
+        return el.cuisine + " " + el.name
+    })
+    return results
+}
 
+let cuisineName = problemNine()
+console.log(cuisineName)
 
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
+function problemTen(){
+    let results;
+    results = dishes.filter(function(el){
+        if (el.cuisine.toLowerCase() === "vegetarian"){
+            el.map(function(element){
+                return element.cuisine + " " + element.name
+            })    
+        }
+        else{
+            return false
+        }
+    })
+    return results
+}
 
+let vegDish = problemTen()
+console.log(vegDish)
 
 
 
