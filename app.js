@@ -160,21 +160,21 @@ console.log("Vegetarian food from Dishes Array: ", vegetarian)
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
 
-// function problemTwo(){
-//     let userInput = prompt ("What type of cuisine would you like to look up? ").toLowerCase()
-//     let userChoice = dishes.filter(function(el){
-//         if (el.cuisine.toLowerCase() === userInput){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-//     })
-//     return userChoice
-// }
+function problemTwo(){
+    let userInput = prompt ("What type of cuisine would you like to look up? ").toLowerCase()
+    let userChoice = dishes.filter(function(el){
+        if (el.cuisine.toLowerCase() === userInput){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return userChoice
+}
 
-// let userCuisine = problemTwo();
-// console.log( "All the dishes you wanted to see are:" ,userCuisine)
+let userCuisine = problemTwo();
+console.log( "All the dishes you wanted to see are:" ,userCuisine)
 
 
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
@@ -258,21 +258,21 @@ console.log("All dishes containing chickpeas are: ", chickpeas)
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
 
-// function problemSeven(){
-//     let userInput = prompt ("What type of ingredient would you like to look up? ").toLowerCase()
-//     let userIngredient = dishes.filter(function(el){
-//         if (el.ingredients.includes(userInput)){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-//     })
-//     return userIngredient
-// }
+function problemSeven(){
+    let userInput = prompt ("What type of ingredient would you like to look up? ").toLowerCase()
+    let userIngredient = dishes.filter(function(el){
+        if (el.ingredients.includes(userInput)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return userIngredient
+}
 
-// let userIngredientChoice = problemSeven();
-// console.log( "All the dishes with the ingredient you wanted to see are:" , userIngredientChoice)
+let userIngredientChoice = problemSeven();
+console.log( "All the dishes with the ingredient you wanted to see are:" , userIngredientChoice)
 
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
@@ -308,15 +308,16 @@ function problemTen(){
     let results;
     results = dishes.filter(function(el){
         if (el.cuisine.toLowerCase() === "vegetarian"){
-            el.map(function(element){
-                return element.cuisine + " " + element.name
-            })    
+            return true
         }
         else{
             return false
         }
     })
-    return results
+    let newResults = results.map(function(element){
+        return element.cuisine + " " + element.name
+    })
+    return newResults
 }
 
 let vegDish = problemTen()
