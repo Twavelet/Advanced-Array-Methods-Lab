@@ -361,5 +361,15 @@ console.log("All dishes containing tomatoes or cheese are: ", tomatoOrCheese)
 
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+function problemTwelve(){
+    let results;
+    results = dishes.reduce(function(total, el){
+        return total.servings + el.servings
+    })
+    return results
+}
+
+let servingsTotal = problemTwelve()
+console.log(servingsTotal)
 
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
