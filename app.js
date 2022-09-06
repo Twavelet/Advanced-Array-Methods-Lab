@@ -161,9 +161,9 @@ console.log("Vegetarian food from Dishes Array: ", vegetarian)
 //Filter
 
 function problemTwo(){
-    let userInput = prompt ("What type of cuisine type would you like to look up? ")
+    let userInput = prompt ("What type of cuisine type would you like to look up? ").toLowerCase()
     let userChoice = dishes.filter(function(el){
-        if (el.cuisine === userInput){
+        if (el.cuisine.toLowerCase() === userInput){
             return true;
         }
         else{
@@ -217,7 +217,21 @@ console.log("The dishes that have an equal ID and Serving Count are: ", equalIdS
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
+function problemFive(){
+    let results;
+    results = dishes.filter(function(el){
+        if (el.servings % 2 == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return results
+}
 
+let evenServings = problemFive();
+console.log("Dishes with an equal servings count are: ", evenServings)
 
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
